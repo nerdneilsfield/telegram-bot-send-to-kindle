@@ -6,13 +6,14 @@ services:
     volumes:
       - "./config.toml:/usr/src/app/kindlebot.toml"
       - "./TEMP:/usr/src/app/TEMP"
-    links: redis
-    depends_on: redis
+    links:
+      - redis
+    depends_on:
+      - redis
 
   redis:
     image: redis:alpine
     restart: always
     volumes:
       - "./data:/data"
-    command:
-      - "redis-server --appendonly yes"
+    command: ["redis-server", "--appendonly", "yes"]
