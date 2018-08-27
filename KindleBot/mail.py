@@ -23,14 +23,16 @@ class Mail(object):
 
             msg['From'] = formataddr(["KindleBot", self._user])
             msg['To'] = formataddr(["kindle", target_email])
-            msg['Subject'] = file_name 
+            msg['Subject'] = file_name
+            print(file_name)
 
 
             # 构造附件1，传送当前目录下的 test.txt 文件
             att1 = MIMEText(open(file_path, 'rb').read(), 'base64', 'utf-8')
             att1["Content-Type"] = 'application/octet-stream'
             # 这里的filename可以任意写，写什么名字，邮件中显示什么名字
-            att1["Content-Disposition"] = 'attachment; filename="{}"'.format(file_name)
+            # att1["Content-Disposition"] = 'attachment; filename=%s' % file_name
+            att1.add_header("Content-Disposition", 'attachment', filename=file_name)
             msg.attach(att1)
 
             if self._smtp_server_ssl:

@@ -1,0 +1,17 @@
+version: "3"
+services:
+  kindlebot:
+    image: nerdneils/kindlebot
+    restart: always
+    volumes:
+      - "./config.toml:/usr/src/app/kindlebot.toml"
+    links: redis
+    depends_on: redis
+
+  redis:
+    image: redis:alpine
+    restart: always
+    volumes:
+      - "./data:/data"
+    command:
+      - "redis-server --appendonly yes"

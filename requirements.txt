@@ -1,0 +1,4 @@
+smtplib
+redis
+toml
+python-telegram-api
