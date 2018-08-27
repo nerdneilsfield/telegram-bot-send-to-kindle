@@ -1,0 +1,16 @@
+[bot]
+token = ""
+[bot.proxy_args]
+proxy_url = "socks5://127.0.0.1:1080"
+
+[email]
+user = ""
+password = ""
+[email.server]
+ip = "smtp.exmail.qq.com"
+port = 465
+ssl = true
+
+[database]
+host = 'localhost'
+port = '6379'
