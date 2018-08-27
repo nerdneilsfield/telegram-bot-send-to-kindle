@@ -1,3 +1,4 @@
 redis
 toml
 python-telegram-bot
+PySocks
