@@ -3,11 +3,15 @@ __pycache__/
 *.py[cod]
 *$py.class
 
+*.toml
+
 # C extensions
 *.so
 
 # Distribution / packaging
 .Python
+.vscode/
+.idea/
 build/
 develop-eggs/
 dist/
@@ -102,3 +106,7 @@ venv.bak/
 
 # mypy
 .mypy_cache/
+
+test_config.toml
+
+TEMP/
