@@ -5,6 +5,7 @@ services:
     restart: always
     volumes:
       - "./config.toml:/usr/src/app/kindlebot.toml"
+      - "./TEMP:/usr/src/app/TEMP"
     links: redis
     depends_on: redis
 
