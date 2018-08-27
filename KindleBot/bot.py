@@ -145,6 +145,10 @@ class Bot(object):
                 ret = self.mail.send(user_email, temp_file_path, file_name)
                 if ret:
                     bot.send_message(chat_id, text="文件发送成功，稍等片刻即可开始阅读啦！")
+                    try:
+                        os.remove(temp_file_path)
+                    except OSError:
+                        pass
                 else:
                     bot.send_message(chat_id, text="由于未知原因，文件发送失败，请稍后重试！")
 
