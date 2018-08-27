@@ -5,4 +5,4 @@ COPY requirements.txt ./
 RUN pip install --no-cache-dir -r requirements.txt
 COPY . .
 
-CMD ["pypy3", "./app.py", "-c", "./example.toml"]
+CMD ["pypy3", "./all-in-one.py", "-c", "./example.toml"]
